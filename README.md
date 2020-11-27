@@ -11,4 +11,4 @@ Run 'bundle install' on the cli to install gems
 
 Run 'ruby favourite_language.rb'
 
-Time taken: 4 hours
+Time taken: 4 hours inc research
