@@ -15,10 +15,23 @@ def favourite_language
     end
   else
     puts 'Sorry, this user has no public repos that we can check!'
+    new_turn?
   end
-  puts name + 's favourite programming langauge is most likely to be ' + languages.max_by { |i| languages.count(i) }
+  puts name + '`s favourite programming langauge is most likely to be ' + languages.max_by { |i| languages.count(i) }
+  new_turn?
 rescue => e
-  puts 'Sorry, we couldn`t find a github user with that name, please try again' and return
+  puts 'Sorry, we couldn`t find a github user with that name, please try again'
+  new_turn?
+end
+
+def new_turn?
+  puts 'Do you want another go?'
+  go_again = gets.chomp
+  if go_again.first == 'y'
+    new_turn 
+  else 
+    return
+  end
 end
 
 puts favourite_language
