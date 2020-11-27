@@ -27,10 +27,9 @@ end
 def new_turn?
   puts 'Do you want another go?'
   go_again = gets.chomp
-  if go_again.first == 'y'
-    new_turn 
-  else 
-    return
+  if go_again[0] == 'y' || go_again[0] == 'Y'
+    favourite_language 
+  else
   end
 end
 
