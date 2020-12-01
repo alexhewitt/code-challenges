@@ -19,7 +19,7 @@ def favourite_language
   end
   puts name + '`s favourite programming langauge is most likely to be ' + languages.max_by { |i| languages.count(i) }
   new_turn?
-rescue => e
+rescue StandardError => e
   puts 'Sorry, we couldn`t find a github user with that name, please try again'
   new_turn?
 end
@@ -30,7 +30,8 @@ def new_turn?
   if go_again[0] == 'y' || go_again[0] == 'Y'
     favourite_language 
   else
+    return
   end
 end
 
-puts favourite_language
+favourite_language
